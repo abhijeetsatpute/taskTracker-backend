@@ -1,0 +1,33 @@
+{
+  "name": "tasktracker-backend",
+  "version": "1.0.0",
+  "description": "REST api to serve as backend for taskTracker React frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhijeetsatpute/taskTracker-backend.git"
+  },
+  "keywords": [
+    "REST",
+    "taskTracker",
+    "CRUD",
+    "mongoDB"
+  ],
+  "author": "Abhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhijeetsatpute/taskTracker-backend/issues"
+  },
+  "homepage": "https://github.com/abhijeetsatpute/taskTracker-backend#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
