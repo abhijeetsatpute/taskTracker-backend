@@ -22,15 +22,15 @@ exports.getTask = (req, res, next) => {
 // POST add tasks
 exports.postAddTask = (req, res, next) => {
     const task = new Task({
-        name: req.body.name,
-        date: req.body.date,
+        text: req.body.text,
+        day: req.body.day,
         reminder: req.body.reminder
     });
     task.save()
         .then(result =>{
             res.status(201).json({
-                name: req.body.name,
-                date: req.body.date,
+                text: req.body.text,
+                day: req.body.day,
                 reminder: req.body.reminder
             });
         })
@@ -53,10 +53,13 @@ exports.putTask = (req, res, next) => {
     Task.findById(taskId)
         .then(task => {
             task.reminder = !task.reminder
-            return task.save();
+            task.save();
+            return task;
         })
-        .then(result =>{
-            res.status(204).send("TASK UPDATED")
+        .then(task =>{
+            res.status(204).json({
+                task
+            })
         })
         .catch(err => console.log(err))
 }
